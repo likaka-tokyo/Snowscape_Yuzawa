@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>越後湯沢 旅スタイル診断</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="quiz-page">
+    <a class="quiz-back-link" href="index.html">
+        <span class="back-icon">←</span>
+        <span class="back-text">RETURN</span>
+    </a>
+    <section class="quiz-hero">
+        <div class="quiz-overlay">
+            <p class="quiz-eyebrow">あなたにぴったりのスキー場は...</p>
+            <h1 class="quiz-title">旅スタイル診断</h1>
+            <p class="quiz-lead">3つの質問に答えて、あなたに合う越後湯沢の楽しみ方を見つけましょう。</p>
+
+            <form class="quiz-form" action="result.php" method="POST">
+                <div class="quiz-block js-fade-in">
+                    <div class="quiz-block-head">
+                        <span class="quiz-number">01</span>
+                        <p class="quiz-question">旅のメイン目的は？</p>
+                    </div>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="ski" required>
+                            <span class="option-card">ガッツリ滑りたい</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="sightseeing">
+                            <span class="option-card">雪景色や温泉を楽しみたい</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-block js-fade-in">
+                    <div class="quiz-block-head">
+                        <span class="quiz-number">02</span>
+                        <p class="quiz-question">スキー・スノボの経験は？</p>
+                    </div>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="beginner" required>
+                            <span class="option-card">初心者・久しぶり</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="advanced">
+                            <span class="option-card">中級・上級者</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="quiz-block js-fade-in">
+                    <div class="quiz-block-head">
+                        <span class="quiz-number">03</span>
+                        <p class="quiz-question">誰と一緒に来ますか？</p>
+                    </div>
+                    <div class="quiz-options">
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="family" required>
+                            <span class="option-card">家族・子供連れ</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="solo">
+                            <span class="option-card">友達・一人・カップル</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="quiz-button">診断スタート</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.js-fade-in').forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add('is-visible');
+            }, 200 + index * 140);
+        });
+    </script>
+</body>
+</html>
