@@ -1542,5 +1542,32 @@ body {
 }
 
 
+/* =========================================
+   MOBILE SIMPLIFICATION (SAFE TO PASTE)
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* 1. Disable sticky on mobile (design decision) */
+  .resort-item {
+    position: relative;
+    height: auto;
+  }
+
+  /* 2. Improve background framing */
+  .resort-item {
+    background-position: center top;
+  }
+
+  /* 3. Improve readability */
+  body {
+    line-height: 1.7;
+  }
+
+  h1, h2 {
+    line-height: 1.3;
+  }
+}
+
 
 
