@@ -31,6 +31,7 @@ body {
     font-family: "Yu Mincho", "MS Mincho", serif;
     background-color: var(--winter-white);
     color: var(--ink-dark);
+    overflow-x: hidden;
     line-height: 1.6;
 }
 
@@ -1468,9 +1469,6 @@ body {
   }
 }
 
-html, body {
-  overflow-x: hidden;
-}
 
 #access iframe {
   width: 100% !important;
@@ -1542,6 +1540,7 @@ html, body {
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
 
 
 
