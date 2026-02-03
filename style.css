@@ -1546,14 +1546,6 @@ body {
    MOBILE SIMPLIFICATION (SAFE TO PASTE)
    ========================================= */
 
-@media (max-width: 768px) {
-
-  /* 1. Disable sticky on mobile (design decision) */
-  .resort-item {
-    position: relative;
-    height: auto;
-  }
-
   /* 2. Improve background framing */
   .resort-item {
     background-position: center top;
@@ -1568,6 +1560,19 @@ body {
     line-height: 1.3;
   }
 }
+
+/* =========================================
+   MOBILE RESORT – STICKY + FULL BG + NO CLIP
+   (NO DESKTOP CHANGE)
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* A) make sticky stable on iPhone */
+  .resort-item{
+    position: sticky;
+    top: 0;
+    height: 100svh;         /* iOS 比 100
+
 
 
 
