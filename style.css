@@ -31,7 +31,6 @@ body {
     font-family: "Yu Mincho", "MS Mincho", serif;
     background-color: var(--winter-white);
     color: var(--ink-dark);
-    overflow-x: hidden;
     line-height: 1.6;
 }
 
@@ -1477,6 +1476,71 @@ html, body {
   width: 100% !important;
   max-width: 100% !important;
   display: block;
+}
+
+/* =====================================================
+   MOBILE FIXES – SAFE VERSION (does NOT break desktop)
+   ===================================================== */
+
+/* 1. Prevent horizontal scrolling (MOBILE ONLY) */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* 2. Fixed background for HERO + ABOUT (iOS safe) */
+@media (max-width: 768px) {
+  body {
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+      url('image/header.JPEG'); /* 確保檔名大小寫一致 */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  /* HERO & ABOUT use shared fixed background */
+  .hero-section,
+  .about-section {
+    background-image: none !important;
+    background-attachment: scroll !important;
+    background-color: transparent !important;
+  }
+}
+
+/* 3. Stop background bleed AFTER ABOUT */
+@media (max-width: 768px) {
+  .ski-intro-section,
+  .resort-scroll-container,
+  #quiz-section,
+  #access,
+  .site-footer {
+    background-color: #f6f7f6; /* or #fff if you prefer */
+  }
+}
+
+/* 4. Responsive Google Map (prevents side scrolling) */
+@media (max-width: 768px) {
+  #access iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 360px;
+    display: block;
+  }
+}
+
+/* 5. Global box sizing (SAFE for sticky) */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 
