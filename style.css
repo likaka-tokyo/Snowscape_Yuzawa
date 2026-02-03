@@ -1435,3 +1435,31 @@ body {
   .hero-section { outline: 3px solid red; }
 }
 
+/* --- Mobile: keep header image fixed through HERO + ABOUT --- */
+@media (max-width: 768px) {
+  body {
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+      url('image/header.JPEG');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  /* HERO + ABOUT use the same fixed background from body::before */
+  .hero-section,
+  .about-section {
+    background-image: none !important;
+    background-attachment: scroll !important;
+    background-color: transparent !important;
+  }
+}
+
