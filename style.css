@@ -1,4 +1,3 @@
-/* --- 基礎設定 --- */
 * {
     margin: 0;
     padding: 0;
@@ -20,29 +19,25 @@ html {
     --winter-glass: rgba(255, 255, 255, 0.6);
 }
 
-/* --- 導覽列與圖示定位 --- */
+
 header {
     position: fixed;
     top: 40px;
     right: 40px;
     z-index: 200;
-    /* 提高到最高層級 */
 }
 
 body {
-    /* 恢復為你原本偏好的明體字型 */
     font-family: "Yu Mincho", "MS Mincho", serif;
     background-color: var(--winter-white);
     color: var(--ink-dark);
     overflow-x: hidden;
-    /* 設定全域基礎行距 */
     line-height: 1.6;
 }
 
 .menu-icon {
     position: relative;
     z-index: 201;
-    /* 確保按鈕在選單背景之上 */
     width: 35px;
     height: 24px;
     display: flex;
@@ -51,7 +46,7 @@ body {
     cursor: pointer;
 }
 
-/* 確保三條線是白色的，並增加陰影防止在亮色背景消失 */
+
 .menu-icon span {
     display: block;
     height: 3px;
@@ -62,12 +57,12 @@ body {
     transition: all 0.3s ease;
 }
 
-/* 點擊後的叉叉顏色 (可視需求調整) */
+
 .menu-icon.active span {
     background-color: #ffffff;
 }
 
-/* 點擊後的叉叉動畫 (保持原本設定) */
+
 .menu-icon.active span:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
@@ -80,7 +75,7 @@ body {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-/* --- 全螢幕選單層 --- */
+
 .full-screen-menu {
     position: fixed;
     top: 0;
@@ -126,20 +121,17 @@ body {
     color: #fff;
     display: block;
     width: 100%;
-    /* 連結寬度撐滿 */
     padding: 35px 0;
-    /* 使用 padding 來控制垂直間距與框的高度 */
     transition: background-color 0.3s ease;
     border-radius: 0;
-    /* 確保沒有圓角 */
 }
 
-/* 懸停時的背景框：現在它會完全填滿 1/3 的寬度 */
+
 .menu-list a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* 調整文字間距 */
+
 .jp-link {
     display: block;
     font-size: 24px;
@@ -171,7 +163,7 @@ body {
     }
 }
 
-/* --- Hero Section 文字淡入動畫 --- */
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -200,13 +192,12 @@ body {
 }
 
 .overlay {
-    /* 恢復原本 0.2em 的字距 */
     letter-spacing: 0.1em;
 
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* 套用 Hero 動畫 */
+
 .sub-catchphrase,
 .main-title,
 .english-title,
@@ -322,7 +313,7 @@ body {
     transition: all 1.2s ease-out;
 }
 
-/* 百葉簾刷開後 1.2s 文字浮現 */
+
 .about-section.is-active .js-content-fade {
     opacity: 1;
     transform: translateY(0);
@@ -547,7 +538,7 @@ body {
     filter: brightness(1.05);
 }
 
-/* 底部文字捲動淡入 */
+
 .about-footer {
     font-size: 18px;
     text-align: center;
@@ -569,15 +560,12 @@ body {
     transform: translateY(0);
 }
 
-/* --- Ski Resort Intro 樣式 --- */
+
 .ski-intro-section {
     width: 100%;
     min-height: 80vh;
-    /* 給予足夠的垂直空間感 */
     background-color: var(--winter-white);
-    /* 背景改回白色，與上一區塊形成對比 */
     color: var(--ink-dark);
-    /* 文字改為深色提升閱讀性 */
     padding: 120px 10%;
     display: flex;
     align-items: center;
@@ -592,10 +580,9 @@ body {
     margin-bottom: 50px;
 }
 
-/* 複用之前的標題顏色設定 */
+
 .ski-header .eng-sub {
     color: #4b5b6f;
-    /* 深藍色標題 */
     font-size: 32px;
 }
 
@@ -623,7 +610,6 @@ body {
 .ski-description p {
     font-size: 18px;
     line-height: 2.4;
-    /* 寬鬆的行距 */
     letter-spacing: 0.05em;
     margin-bottom: 2em;
     color: var(--ink-soft);
@@ -902,14 +888,13 @@ body {
     transform: translateX(40px);
 }
 
-/* 標題動畫 */
+
 .resort-header {
     margin-bottom: 40px;
 }
 
 .resort-title-jp {
     font-size: clamp(40px, 6vw, 80px);
-    /* 響應式字級 */
     font-weight: 700;
     color: #fff;
     line-height: 1.1;
@@ -923,7 +908,7 @@ body {
     letter-spacing: 0.1em;
 }
 
-/* 設計稿中的半透明黑框 */
+
 .resort-details {
     max-width: 550px;
     background: rgba(10, 14, 20, 0.35);
@@ -932,7 +917,6 @@ body {
     opacity: 0;
     transform: translateY(30px);
     transition: all 1s ease-out 0.6s;
-    /* 延遲出現 */
 }
 
 .resort-item:nth-child(even) .resort-details {
@@ -1212,6 +1196,174 @@ body {
 
     .access-map {
         aspect-ratio: 16 / 9;
+    }
+}
+
+/* --- Mobile refinement --- */
+@media (max-width: 768px) {
+    header {
+        top: 20px;
+        right: 20px;
+    }
+
+    .hero-section {
+        height: 100vh;
+        padding: 0 6%;
+    }
+
+    .sub-catchphrase {
+        font-size: 18px;
+        margin-bottom: 24px;
+    }
+
+    .main-title {
+        font-size: 64px;
+        margin-bottom: -20px;
+    }
+
+    .english-title {
+        font-size: 42px;
+        margin-bottom: -20px;
+    }
+
+    .hero-tagline {
+        font-size: 18px;
+        margin-top: 18px;
+    }
+
+    .bottom-slogan {
+        font-size: 18px;
+        margin-top: 120px;
+    }
+
+    .about-section {
+        padding: 80px 6%;
+    }
+
+    .about-flex-content {
+        gap: 32px;
+    }
+
+    .map-box {
+        flex: 1 1 100%;
+    }
+
+    .text-box {
+        font-size: 16px;
+    }
+
+    .ski-intro-section {
+        padding: 90px 6%;
+    }
+
+    .ski-slogan {
+        font-size: 22px;
+    }
+
+    .ski-description p {
+        font-size: 16px;
+        line-height: 2.2;
+    }
+
+    .resort-item {
+        padding: 80px 6%;
+        background-color: #000 !important;
+    }
+
+    .resort-title-jp {
+        font-size: clamp(28px, 8vw, 48px);
+    }
+
+    .resort-details {
+        max-width: 100%;
+        padding: 22px;
+    }
+
+    .recommend-reason {
+        font-size: 16px;
+    }
+
+    .resort-meta {
+        font-size: 13px;
+    }
+
+    .resort-bg {
+        background-size: contain !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .transition-spacer {
+        padding: 60px 8% 20px;
+    }
+
+    .fade-text {
+        font-size: 18px;
+        margin-bottom: 80px;
+    }
+
+    .fade-text-small {
+        font-size: 15px;
+        margin-bottom: 80px;
+    }
+
+    .fade-text-highlight {
+        font-size: 16px;
+        margin-bottom: 80px;
+    }
+
+    .spacer-text {
+        font-size: 12px;
+        top: 10vh;
+    }
+
+    .cta-copy {
+        top: 14%;
+        width: min(560px, 90%);
+    }
+
+    .cta-copy h2 {
+        font-size: 22px;
+    }
+
+    .cta-copy p {
+        font-size: 14px;
+    }
+
+    .cta-copy .cta-button {
+        margin-top: 20px;
+        padding: 10px 26px;
+        font-size: 14px;
+    }
+
+    #access {
+        padding: 90px 8% 100px;
+    }
+
+    .access-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 52px;
+    }
+
+    .english-title {
+        font-size: 34px;
+    }
+
+    .bottom-slogan {
+        margin-top: 90px;
+    }
+
+    .resort-item {
+        padding: 70px 6%;
+    }
+
+    .cta-copy {
+        top: 12%;
     }
 }
 
