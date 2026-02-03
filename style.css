@@ -1424,9 +1424,14 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    height: 85vh;                 /* 不要滿版，避免過度裁切 */
-    background-size: cover;
-    background-position: center top; /* 重點：往上對齊 */
+  .hero-section {
+    height: 85vh;
+    background-position: center top;
+    background-attachment: scroll;
   }
 }
+
+@media (max-width: 768px) {
+  .hero-section { outline: 3px solid red; }
+}
+
