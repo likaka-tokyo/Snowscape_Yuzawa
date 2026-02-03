@@ -1431,10 +1431,6 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .hero-section { outline: 3px solid red; }
-}
-
 /* --- Mobile: keep header image fixed through HERO + ABOUT --- */
 @media (max-width: 768px) {
   body {
@@ -1462,4 +1458,26 @@ body {
     background-color: transparent !important;
   }
 }
+
+@media (max-width: 768px) {
+  .ski-intro-section,
+  .resort-scroll-container,
+  #quiz-section,
+  #access,
+  .site-footer {
+    background-color: #f6f7f6; 
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+#access iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+
 
